@@ -9,4 +9,4 @@ Implementation of [haveibeenpwnd]('https://www.troyhunt.com/ive-just-launched-pw
 
 Each file is an implementation of the above process in a certain programming language. The code contains a function `weakness` that accepts a `password` and returns `count` - how many times the password was found on pwnd databases, if fetching from the API is successfull and returns connection error on error.
 
-![SocialLogo.png]('https://user-images.githubusercontent.com/53615807/84067822-b7ca4680-a9d0-11ea-94df-0142f0d353f1.png')
+![SocialLogo.png]('https://user-images.githubusercontent.com/53615807/84068405-90c04480-a9d1-11ea-9919-36f0ab34158c.png')
