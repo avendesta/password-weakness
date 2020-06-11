@@ -1,3 +1,7 @@
+'''
+language - python3
+required - pip3 install requests
+'''
 import hashlib
 import requests
 
@@ -9,13 +13,19 @@ def weakness(password):
     try:
         response = requests.get(f"https://api.pwnedpasswords.com/range/{first_five}",timeout=0.1)
     except requests.exceptions.RequestException as e:
-        return 0
+        return -1   # on connection error the function returns -1
     else:
         content = response.text
-        weakness = 0
+        pwned_count = 0
 
         for line in content.splitlines():
             if after_five in line:
-                _ , weakness = line.split(':')
+                _ , pwned_count = line.split(':')
                 break
-        return int(weakness)
+        return int(pwned_count)
+
+'''
+Example
+for password='iloveyou', weakness -> 1608627 if successfull or -1 on connection error
+'''
+# weakness('iloveyou')
